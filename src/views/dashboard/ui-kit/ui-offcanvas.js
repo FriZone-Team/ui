@@ -1,12 +1,7 @@
-
-import React from 'react'
+import React from "react";
 
 const UiOffcanvas = () => {
-    return (
-        <>
-               
-        </>
-    )
-}
+  return <></>;
+};
 
-export default UiOffcanvas
+export default UiOffcanvas;

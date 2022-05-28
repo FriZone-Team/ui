@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-//SimpleRouter 
-import SimpleRouter from '../../router/simple-router'
+//SimpleRouter
+import SimpleRouter from "../../router/simple-router";
 
 const Simple = () => {
-    return (
-        <>
-          <div className="wrapper">
-            <SimpleRouter />
-          </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="wrapper">
+        <SimpleRouter />
+      </div>
+    </>
+  );
+};
 
-export default Simple
+export default Simple;

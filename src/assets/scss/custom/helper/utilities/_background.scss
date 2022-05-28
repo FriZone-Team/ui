@@ -2,6 +2,6 @@
  * Background color 
  */
 
-@each $color, $value in $theme-colors{
-	@include bg-variant(".bg-soft-#{$color}", $value);
+@each $color, $value in $theme-colors {
+  @include bg-variant(".bg-soft-#{$color}", $value);
 }

@@ -1,19 +1,18 @@
-
 .iq-maintenance {
-	img {
-    	width: 40%;
-	}
+  img {
+    width: 40%;
+  }
 }
 
 @include media-breakpoint-down(md) {
-    .iq-maintenance {
-        img {
-            width: 70%;
-        }   
+  .iq-maintenance {
+    img {
+      width: 70%;
     }
-    .iq-error{
-        img{
-            padding: 0px 3.125rem;
-        }
-    } 
+  }
+  .iq-error {
+    img {
+      padding: 0px 3.125rem;
+    }
+  }
 }

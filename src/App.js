@@ -1,8 +1,8 @@
 //router
-import IndexRouters from "./router/index"
+import IndexRouters from "./router/index";
 
 //scss
-import "./assets/scss/socialv.scss"
+import "./assets/scss/app.scss";
 
 function App() {
   return (

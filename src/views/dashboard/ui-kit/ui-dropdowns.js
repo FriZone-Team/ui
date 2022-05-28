@@ -1,12 +1,7 @@
-
-import React from 'react'
+import React from "react";
 
 const UiDropdowns = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div></div>;
+};
 
-export default UiDropdowns
+export default UiDropdowns;

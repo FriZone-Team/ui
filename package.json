@@ -1,6 +1,6 @@
 {
-  "name": "socialv-ui-react",
-  "version": "0.1.0",
+  "name": "@frizone/ui",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",

@@ -1,7 +1,7 @@
-import {createStore, combineReducers} from 'redux'
-import Mode from './mode/mode'
+import { createStore, combineReducers } from "redux";
+import Mode from "./mode/mode";
 export default createStore(
-    combineReducers({
-        mode: Mode
-    })
-)
+  combineReducers({
+    mode: Mode,
+  })
+);
