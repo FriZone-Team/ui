@@ -2,6 +2,7 @@ import React from "react";
 import { appName } from "../../../../config";
 import { Navbar, Dropdown, Nav, Form, Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 //image
 import logo from "../../../../assets/images/logo.png";
@@ -16,6 +17,8 @@ const Header = () => {
   const minisidebar = () => {
     document.body.classList.toggle("sidebar-main");
   };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -43,7 +46,7 @@ const Header = () => {
                 <input
                   type="text"
                   className="text search-input"
-                  placeholder="Search here..."
+                  placeholder={t`search_placeholder` + " ..."}
                 />
               </Form>
             </div>

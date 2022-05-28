@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import CustomToggle from "../../components/dropdowns";
 import ShareOffcanvas from "../../components/share-offcanvas";
+import { useTranslation } from "react-i18next";
 
 //image
 import user1 from "../../assets/images/user/1.jpg";
@@ -54,6 +55,8 @@ const Index = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Container>
@@ -66,7 +69,7 @@ const Index = () => {
               >
                 <div className="card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">Create Post</h4>
+                    <h4 className="card-title">{t("create_post")}</h4>
                   </div>
                 </div>
                 <Card.Body>
