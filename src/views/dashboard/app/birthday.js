@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Card from "../../../components/Card";
+import { Trans } from "react-i18next";
 
 //img
 import profilebg4 from "../../../assets/images/page-img/profile-bg4.jpg";
@@ -96,7 +97,9 @@ const Birthday = () => {
                 <Card>
                   <Card.Header className=" d-flex justify-content-between rounded border-bottom-0">
                     <div className="header-title">
-                      <h4 className="card-title">Upcoming Birthday</h4>
+                      <h4 className="card-title">
+                        <Trans i18nKey="upcoming_birthday_title" />
+                      </h4>
                     </div>
                   </Card.Header>
                 </Card>

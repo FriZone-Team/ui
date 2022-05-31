@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "../../../components/Card";
+import { useTranslation } from "react-i18next";
 
 import imgp1 from "../../../assets/images/user/15.jpg";
 import imgp2 from "../../../assets/images/user/05.jpg";
@@ -61,6 +62,8 @@ import ProfileHeader from "../../../components/profile-header";
 import bg3 from "../../../assets/images/page-img/profile-bg3.jpg";
 
 const Profile2 = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <ProfileHeader title="Profile 2" img={bg3} />
@@ -830,7 +833,7 @@ const Profile2 = () => {
                           <input
                             type="text"
                             className="form-control rounded"
-                            placeholder="Write something here..."
+                            placeholder={t`create_post_placeholder` + " ..."}
                             style={{ border: "none" }}
                           />
                         </form>
@@ -938,7 +941,7 @@ const Profile2 = () => {
                           <input
                             type="text"
                             className="form-control rounded"
-                            placeholder="Write something here..."
+                            placeholder={t`create_post_placeholder` + " ..."}
                             style={{ border: "none" }}
                           />
                         </form>

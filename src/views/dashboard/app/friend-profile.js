@@ -3,6 +3,7 @@ import { Row, Col, Container, Dropdown } from "react-bootstrap";
 import Card from "../../../components/Card";
 import CustomToggle from "../../../components/dropdowns";
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 // images
 import img1 from "../../../assets/images/page-img/profile-bg1.jpg";
@@ -50,7 +51,9 @@ import small13 from "../../../assets/images/small/13.png";
 import small14 from "../../../assets/images/small/14.png";
 import img59 from "../../../assets/images/page-img/59.jpg";
 
-const friendProfile = () => {
+const FriendProfile = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Container>
@@ -337,7 +340,9 @@ const friendProfile = () => {
               <Card id="post-modal-data">
                 <div className="card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">Create Post</h4>
+                    <h4 className="card-title">
+                      <Trans i18nKey="create_post" />
+                    </h4>
                   </div>
                 </div>
                 <Card.Body data-toggle="modal" data-target="#post-modal">
@@ -353,7 +358,7 @@ const friendProfile = () => {
                       <input
                         type="text"
                         className="form-control rounded"
-                        placeholder="Write something here..."
+                        placeholder={t`create_post_placeholder` + " ..."}
                         style={{ border: "none" }}
                       />
                     </form>
@@ -367,7 +372,7 @@ const friendProfile = () => {
                         alt="icon"
                         className="img-fluid"
                       />{" "}
-                      Photo/Video
+                      <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                     </li>
                     <li className="rounded p-2 pointer me-3">
                       <Link to="#"></Link>
@@ -381,7 +386,7 @@ const friendProfile = () => {
                         alt="icon"
                         className="img-fluid"
                       />{" "}
-                      Feeling/Activity
+                      <Trans i18nKey="feeling" />/<Trans i18nKey="activity" />
                     </li>
                     <li className="rounded p-2 pointer">
                       <div className="card-header-toolbar d-flex align-items-center">
@@ -430,7 +435,7 @@ const friendProfile = () => {
                     <div className="modal-content">
                       <div className="modal-header">
                         <h5 className="modal-title" id="post-modalLabel">
-                          Create Post
+                          <Trans i18nKey="create_post" />
                         </h5>
                         <button
                           type="button"
@@ -453,7 +458,7 @@ const friendProfile = () => {
                             <input
                               type="text"
                               className="form-control rounded"
-                              placeholder="Write something here..."
+                              placeholder={t`create_post_placeholder` + " ..."}
                               style={{ border: "none" }}
                             />
                           </form>
@@ -468,7 +473,8 @@ const friendProfile = () => {
                                 alt="icon"
                                 className="img-fluid"
                               />{" "}
-                              Photo/Video
+                              <Trans i18nKey="photo" />/
+                              <Trans i18nKey="video" />
                             </div>
                           </li>
                           <li className="col-md-6 mb-3">
@@ -479,7 +485,7 @@ const friendProfile = () => {
                                 alt="icon"
                                 className="img-fluid"
                               />{" "}
-                              Tag Friend
+                              <Trans i18nKey="tag_friend" />
                             </div>
                           </li>
                           <li className="col-md-6 mb-3">
@@ -490,7 +496,8 @@ const friendProfile = () => {
                                 alt="icon"
                                 className="img-fluid"
                               />{" "}
-                              Feeling/Activity
+                              <Trans i18nKey="feeling" />/
+                              <Trans i18nKey="activity" />
                             </div>
                           </li>
                           <li className="col-md-6 mb-3">
@@ -1682,4 +1689,4 @@ const friendProfile = () => {
   );
 };
 
-export default friendProfile;
+export default FriendProfile;

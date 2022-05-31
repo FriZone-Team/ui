@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import Card from "../../components/Card";
 import CustomToggle from "../../components/dropdowns";
 import ShareOffcanvas from "../../components/share-offcanvas";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 //image
 import user1 from "../../assets/images/user/1.jpg";
@@ -69,7 +69,9 @@ const Index = () => {
               >
                 <div className="card-header d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">{t("create_post")}</h4>
+                    <h4 className="card-title">
+                      <Trans i18nKey="create_post" />
+                    </h4>
                   </div>
                 </div>
                 <Card.Body>
@@ -88,7 +90,7 @@ const Index = () => {
                       <input
                         type="text"
                         className="form-control rounded"
-                        placeholder="Write something here..."
+                        placeholder={t`create_post_placeholder` + " ..."}
                         style={{ border: "none" }}
                       />
                     </form>
@@ -98,19 +100,19 @@ const Index = () => {
                     <li className="me-3 mb-md-0 mb-2">
                       <Link to="#" className="btn btn-soft-primary">
                         <img src={img1} alt="icon" className="img-fluid me-2" />{" "}
-                        Photo/Video
+                        <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                       </Link>
                     </li>
                     <li className="me-3 mb-md-0 mb-2">
                       <Link to="#" className="btn btn-soft-primary">
                         <img src={img2} alt="icon" className="img-fluid me-2" />{" "}
-                        Tag Friend
+                        <Trans i18nKey="tag_friend" />
                       </Link>
                     </li>
                     <li className="me-3">
                       <Link to="#" className="btn btn-soft-primary">
                         <img src={img3} alt="icon" className="img-fluid me-2" />{" "}
-                        Feeling/Activity
+                        <Trans i18nKey="feeling" />/<Trans i18nKey="activity" />
                       </Link>
                     </li>
                     <li>
@@ -151,7 +153,9 @@ const Index = () => {
                   show={show}
                 >
                   <Modal.Header className="d-flex justify-content-between">
-                    <Modal.Title id="post-modalLabel">Create Post</Modal.Title>
+                    <Modal.Title id="post-modalLabel">
+                      <Trans i18nKey="create_post" />
+                    </Modal.Title>
                     <button
                       type="button"
                       className="btn btn-secondary"
@@ -177,7 +181,7 @@ const Index = () => {
                         <input
                           type="text"
                           className="form-control rounded"
-                          placeholder="Write something here..."
+                          placeholder={t`create_post_placeholder` + " ..."}
                           style={{ border: "none" }}
                         />
                       </form>
@@ -192,7 +196,7 @@ const Index = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Photo/Video
+                          <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">
@@ -203,7 +207,7 @@ const Index = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Tag Friend
+                          <Trans i18nKey="tag_friend" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">
@@ -214,7 +218,8 @@ const Index = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Feeling/Activity
+                          <Trans i18nKey="feeling" />/
+                          <Trans i18nKey="activity" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">
@@ -1884,7 +1889,9 @@ const Index = () => {
             <Card>
               <div className="card-header d-flex justify-content-between">
                 <div className="header-title">
-                  <h4 className="card-title">Stories</h4>
+                  <h4 className="card-title">
+                    <Trans i18nKey="story_title" />
+                  </h4>
                 </div>
               </div>
               <Card.Body>
@@ -1892,8 +1899,12 @@ const Index = () => {
                   <li className="d-flex mb-3 align-items-center">
                     <i className="ri-add-line"></i>
                     <div className="stories-data ms-3">
-                      <h5>Creat Your Story</h5>
-                      <p className="mb-0">time to story</p>
+                      <h5>
+                        <Trans i18nKey="create_story" />
+                      </h5>
+                      <p className="mb-0">
+                        <Trans i18nKey="create_story_time" />
+                      </p>
                     </div>
                   </li>
                   <li className="d-flex mb-3 align-items-center active">
@@ -1931,14 +1942,16 @@ const Index = () => {
                   </li>
                 </ul>
                 <Link to="#" className="btn btn-primary d-block mt-3">
-                  See All
+                  <Trans i18nKey="see_all" />
                 </Link>
               </Card.Body>
             </Card>
             <Card>
               <div className="card-header d-flex justify-content-between">
                 <div className="header-title">
-                  <h4 className="card-title">Events</h4>
+                  <h4 className="card-title">
+                    <Trans i18nKey="event_title" />
+                  </h4>
                 </div>
                 <div className="card-header-toolbar d-flex align-items-center">
                   <Dropdown>
@@ -2004,7 +2017,9 @@ const Index = () => {
             <Card>
               <div className="card-header d-flex justify-content-between">
                 <div className="header-title">
-                  <h4 className="card-title">Upcoming Birthday</h4>
+                  <h4 className="card-title">
+                    <Trans i18nKey="upcoming_birthday_title" />
+                  </h4>
                 </div>
               </div>
               <Card.Body>
@@ -2037,7 +2052,9 @@ const Index = () => {
             <Card>
               <div className="card-header d-flex justify-content-between">
                 <div className="header-title">
-                  <h4 className="card-title">Suggested Pages</h4>
+                  <h4 className="card-title">
+                    <Trans i18nKey="suggested_page_title" />
+                  </h4>
                 </div>
                 <div className="card-header-toolbar d-flex align-items-center">
                   <Dropdown>
@@ -2088,7 +2105,8 @@ const Index = () => {
                     />
                     <div className="mt-3">
                       <Link to="#" className="btn d-block">
-                        <i className="ri-thumb-up-line me-2"></i> Like Page
+                        <i className="ri-thumb-up-line me-2"></i>{" "}
+                        <Trans i18nKey="like_page" />
                       </Link>
                     </div>
                   </li>
@@ -2111,7 +2129,8 @@ const Index = () => {
                     />
                     <div className="mt-3">
                       <Link to="#" className="btn d-block">
-                        <i className="ri-thumb-up-line me-2"></i> Like Page
+                        <i className="ri-thumb-up-line me-2"></i>{" "}
+                        <Trans i18nKey="like_page" />
                       </Link>
                     </div>
                   </li>

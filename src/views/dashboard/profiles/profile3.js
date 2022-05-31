@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Tab, Dropdown } from "react-bootstrap";
 import Card from "../../../components/Card";
+import { Trans } from "react-i18next";
 
 import imgpp1 from "../../../assets/images/page-img/profile-bg1.jpg";
 import imgpp2 from "../../../assets/images/user/11.png";
@@ -734,7 +735,7 @@ const Profile3 = () => {
                           alt="icon"
                           className="img-fluid me-2"
                         />{" "}
-                        Photo/Video
+                        <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                       </li>
                       <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3 mb-md-0 mb-2">
                         <img

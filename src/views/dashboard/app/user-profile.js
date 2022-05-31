@@ -15,6 +15,7 @@ import Card from "../../../components/Card";
 import CustomToggle from "../../../components/dropdowns";
 import ShareOffcanvas from "../../../components/share-offcanvas";
 import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 // images
 import img1 from "../../../assets/images/page-img/profile-bg1.jpg";
@@ -95,6 +96,8 @@ const UserProfile = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -550,7 +553,9 @@ const UserProfile = () => {
                         <Card id="post-modal-data">
                           <div className="card-header d-flex justify-content-between">
                             <div className="header-title">
-                              <h4 className="card-title">Create Post</h4>
+                              <h4 className="card-title">
+                                <Trans i18nKey="create_post" />
+                              </h4>
                             </div>
                           </div>
                           <Card.Body>
@@ -569,7 +574,9 @@ const UserProfile = () => {
                                 <input
                                   type="text"
                                   className="form-control rounded"
-                                  placeholder="Write something here..."
+                                  placeholder={
+                                    t`create_post_placeholder` + " ..."
+                                  }
                                   style={{ border: "none" }}
                                 />
                               </form>
@@ -582,7 +589,8 @@ const UserProfile = () => {
                                   alt="icon"
                                   className="img-fluid me-2"
                                 />{" "}
-                                Photo/Video
+                                <Trans i18nKey="photo" />/
+                                <Trans i18nKey="video" />
                               </li>
                               <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3 mb-md-0 mb-2">
                                 <img
@@ -590,7 +598,7 @@ const UserProfile = () => {
                                   alt="icon"
                                   className="img-fluid me-2"
                                 />{" "}
-                                Tag Friend
+                                <Trans i18nKey="tag_friend" />
                               </li>
                               <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3">
                                 <img
@@ -598,7 +606,8 @@ const UserProfile = () => {
                                   alt="icon"
                                   className="img-fluid me-2"
                                 />{" "}
-                                Feeling/Activity
+                                <Trans i18nKey="feeling" />/
+                                <Trans i18nKey="activity" />
                               </li>
                               <li className="bg-soft-primary rounded p-2 pointer text-center">
                                 <div className="card-header-toolbar d-flex align-items-center">
@@ -652,7 +661,7 @@ const UserProfile = () => {
                           <Modal show={show} onHide={handleClose} size="lg">
                             <Modal.Header className="d-flex justify-content-between">
                               <h5 className="modal-title" id="post-modalLabel">
-                                Create Post
+                                <Trans i18nKey="create_post" />
                               </h5>
                               <button
                                 type="button"
@@ -678,7 +687,9 @@ const UserProfile = () => {
                                   <input
                                     type="text"
                                     className="form-control rounded"
-                                    placeholder="Write something here..."
+                                    placeholder={
+                                      t`create_post_placeholder` + " ..."
+                                    }
                                     style={{ border: "none" }}
                                   />
                                 </form>
@@ -693,7 +704,8 @@ const UserProfile = () => {
                                       alt="icon"
                                       className="img-fluid"
                                     />{" "}
-                                    Photo/Video
+                                    <Trans i18nKey="photo" />/
+                                    <Trans i18nKey="video" />
                                   </div>
                                 </li>
                                 <li className="col-md-6 mb-3">
@@ -704,7 +716,7 @@ const UserProfile = () => {
                                       alt="icon"
                                       className="img-fluid"
                                     />{" "}
-                                    Tag Friend
+                                    <Trans i18nKey="tag_friend" />
                                   </div>
                                 </li>
                                 <li className="col-md-6 mb-3">
@@ -715,7 +727,8 @@ const UserProfile = () => {
                                       alt="icon"
                                       className="img-fluid"
                                     />{" "}
-                                    Feeling/Activity
+                                    <Trans i18nKey="feeling" />/
+                                    <Trans i18nKey="activity" />
                                   </div>
                                 </li>
                                 <li className="col-md-6 mb-3">

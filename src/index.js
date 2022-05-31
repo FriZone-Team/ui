@@ -19,7 +19,7 @@ import * as resources from "./i18n";
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: localStorage.getItem('language'),
+  lng: localStorage.getItem("language"),
   fallbackLng: "en",
 });
 

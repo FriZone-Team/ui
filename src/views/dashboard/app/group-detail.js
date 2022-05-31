@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import ProfileHeader from "../../../components/profile-header";
 import CustomToggle from "../../../components/dropdowns";
 import ShareOffcanvas from "../../../components/share-offcanvas";
+import { Trans, useTranslation } from "react-i18next";
 
 //image
 import img1 from "../../../assets/images/page-img/gi-1.jpg";
@@ -54,6 +55,8 @@ const GroupDetail = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -152,7 +155,9 @@ const GroupDetail = () => {
               <Card id="post-modal-data">
                 <Card.Header className="d-flex justify-content-between">
                   <div className="header-title">
-                    <h4 className="card-title">Create Post</h4>
+                    <h4 className="card-title">
+                      <Trans i18nKey="create_post" />
+                    </h4>
                   </div>
                 </Card.Header>
                 <Card.Body>
@@ -171,7 +176,7 @@ const GroupDetail = () => {
                       <input
                         type="text"
                         className="form-control rounded"
-                        placeholder="Write something here..."
+                        placeholder={t`create_post_placeholder` + " ..."}
                         style={{ border: "none" }}
                       />
                     </form>
@@ -180,15 +185,15 @@ const GroupDetail = () => {
                   <ul className=" post-opt-block d-flex list-inline m-0 p-0 flex-wrap">
                     <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3 mb-md-0 mb-2">
                       <img src={small2} alt="icon" className="img-fluid me-2" />{" "}
-                      Photo/Video
+                      <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                     </li>
                     <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3 mb-md-0 mb-2">
                       <img src={small3} alt="icon" className="img-fluid me-2" />{" "}
-                      Tag Friend
+                      <Trans i18nKey="tag_friend" />
                     </li>
                     <li className="bg-soft-primary rounded p-2 pointer d-flex align-items-center me-3">
                       <img src={small4} alt="icon" className="img-fluid me-2" />{" "}
-                      Feeling/Activity
+                      <Trans i18nKey="feeling" />/<Trans i18nKey="activity" />
                     </li>
                     <li>
                       <button className=" btn btn-soft-primary">
@@ -223,7 +228,7 @@ const GroupDetail = () => {
                 <Modal show={show} onHide={handleClose} size="lg">
                   <Modal.Header className="d-flex justify-content-between">
                     <h5 className="modal-title" id="post-modalLabel">
-                      Create Post
+                      <Trans i18nKey="create_post" />
                     </h5>
                     <button
                       type="button"
@@ -246,7 +251,7 @@ const GroupDetail = () => {
                         <input
                           type="text"
                           className="form-control rounded"
-                          placeholder="Write something here..."
+                          placeholder={t`create_post_placeholder` + " ..."}
                           style={{ border: "none" }}
                         />
                       </form>
@@ -261,7 +266,7 @@ const GroupDetail = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Photo/Video
+                          <Trans i18nKey="photo" />/<Trans i18nKey="video" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">
@@ -272,7 +277,7 @@ const GroupDetail = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Tag Friend
+                          <Trans i18nKey="tag_friend" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">
@@ -283,7 +288,8 @@ const GroupDetail = () => {
                             alt="icon"
                             className="img-fluid"
                           />{" "}
-                          Feeling/Activity
+                          <Trans i18nKey="feeling" />/
+                          <Trans i18nKey="activity" />
                         </div>
                       </li>
                       <li className="col-md-6 mb-3">

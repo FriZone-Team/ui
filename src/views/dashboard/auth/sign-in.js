@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col, Container, Form, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { Trans } from "react-i18next";
 
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -55,10 +56,9 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white">Find new friends</h4>
+                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_1_title" /></h4>
                       <p>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content.
+                      <Trans i18nKey="signin_banner_1_description" />
                       </p>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -67,12 +67,9 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white">
-                        Connect with the world
-                      </h4>
+                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_2_title" /></h4>
                       <p>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content.
+                      <Trans i18nKey="signin_banner_2_description" />
                       </p>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -81,10 +78,9 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white">Create new events</h4>
+                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_3_title" /></h4>
                       <p>
-                        It is a long established fact that a reader will be
-                        distracted by the readable content.
+                      <Trans i18nKey="signin_banner_3_description" />
                       </p>
                     </SwiperSlide>
                   </Swiper>
@@ -93,13 +89,13 @@ const SignIn = () => {
             </Col>
             <Col md="6" className="bg-white pt-5 pt-5 pb-lg-0 pb-5">
               <div className="sign-in-from">
-                <h1 className="mb-0">Sign in</h1>
+                <h1 className="mb-0"><Trans i18nKey="signin_title" /></h1>
                 <p>
-                  Enter your email address and password to access admin panel.
+                <Trans i18nKey="signin_description" />.
                 </p>
                 <Form className="mt-4">
                   <Form.Group className="form-group">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label><Trans i18nKey="email_address" /></Form.Label>
                     <Form.Control
                       type="email"
                       className="mb-0"
@@ -108,9 +104,9 @@ const SignIn = () => {
                     />
                   </Form.Group>
                   <Form.Group className="form-group">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label><Trans i18nKey="password" /></Form.Label>
                     <Link to="#" className="float-end">
-                      Forgot password?
+                    <Trans i18nKey="forgot_password" /> ?
                     </Link>
                     <Form.Control
                       type="password"
@@ -126,7 +122,7 @@ const SignIn = () => {
                         className="me-2"
                         id="customCheck11"
                       />
-                      <Form.Check.Label>Remember Me</Form.Check.Label>{" "}
+                      <Form.Check.Label><Trans i18nKey="remember_me" /></Form.Check.Label>{" "}
                     </Form.Check>
                     <Button
                       variant="primary"
@@ -134,13 +130,13 @@ const SignIn = () => {
                       className="float-end"
                       onClick={() => history.push("/")}
                     >
-                      Sign in
+                      <Trans i18nKey="signin" />
                     </Button>
                   </div>
                   <div className="sign-info">
                     <span className="dark-color d-inline-block line-height-2">
-                      Don't have an account?{" "}
-                      <Link to="/auth/sign-up">Sign up</Link>
+                    <Trans i18nKey="signup_question" /> ?{" "}
+                      <Link to="/auth/sign-up"><Trans i18nKey="signup" /></Link>
                     </span>
                     <ul className="iq-social-media">
                       <li>
