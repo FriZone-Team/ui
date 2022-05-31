@@ -6,6 +6,7 @@ import {
   AccordionContext,
 } from "react-bootstrap";
 import Scrollbar from "smooth-scrollbar";
+import { Trans } from "react-i18next";
 
 function CustomToggle({ children, eventKey, onClick }) {
   const { activeEventKey } = useContext(AccordionContext);
@@ -45,7 +46,7 @@ const Sidebar = () => {
               <li className={`${location.pathname === "/" ? "active" : ""} `}>
                 <Link to="/">
                   <i className="las la-newspaper"></i>
-                  <span>Newsfeed</span>
+                  <span><Trans i18nKey="newsfeed" /></span>
                 </Link>
               </li>
               <li
@@ -55,7 +56,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/profile">
                   <i className="las la-user"></i>
-                  <span>Profile</span>
+                  <span><Trans i18nKey="profile" /></span>
                 </Link>
               </li>
               <li
@@ -67,7 +68,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/friend-list">
                   <i className="las la-user-friends"></i>
-                  <span>Friend List</span>
+                  <span><Trans i18nKey="friend_list" /></span>
                 </Link>
               </li>
               <li
@@ -79,7 +80,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/friend-profile">
                   <i className="las la-user-friends"></i>
-                  <span>Friend Profile</span>
+                  <span><Trans i18nKey="friend_profile" /></span>
                 </Link>
               </li>
               <li
@@ -92,7 +93,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/groups">
                   <i className="las la-users"></i>
-                  <span>Group</span>
+                  <span><Trans i18nKey="group" /></span>
                 </Link>
               </li>
               <li
@@ -104,7 +105,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/profile-images">
                   <i className="las la-image"></i>
-                  <span>Profile Image</span>
+                  <span><Trans i18nKey="img_profile" /></span>
                 </Link>
               </li>
               <li
@@ -116,7 +117,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/profile-videos">
                   <i className="las la-video"></i>
-                  <span>Profile Video</span>
+                  <span><Trans i18nKey="video_profile" /></span>
                 </Link>
               </li>
               <li
@@ -128,7 +129,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/profile-events">
                   <i className="las la-film"></i>
-                  <span>Profile Events</span>
+                  <span><Trans i18nKey="event_profile" /></span>
                 </Link>
               </li>
               <li
@@ -140,7 +141,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/profile-badges">
                   <i className="las la-certificate"></i>
-                  <span>Profile Badges</span>
+                  <span><Trans i18nKey="badges_profile" /></span>
                 </Link>
               </li>
               <li
@@ -152,7 +153,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/profile-forum">
                   <i className="lab la-wpforms"></i>
-                  <span>Profile Forum</span>
+                  <span><Trans i18nKey="forum_profile" /></span>
                 </Link>
               </li>
               <li
@@ -164,7 +165,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/notification">
                   <i className="las la-bell"></i>
-                  <span>Notification</span>
+                  <span><Trans i18nKey="notifycation" /></span>
                 </Link>
               </li>
               <li
@@ -174,7 +175,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/file">
                   <i className="las la-file"></i>
-                  <span>Files</span>
+                  <span><Trans i18nKey="file " /></span>
                 </Link>
               </li>
               <li
@@ -186,7 +187,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/friend-request">
                   <i className="las la-anchor"></i>
-                  <span>Friend Request</span>
+                  <span><Trans i18nKey="friend_request" /></span>
                 </Link>
               </li>
               <li
@@ -196,7 +197,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/chat">
                   <i className="lab la-rocketchat"></i>
-                  <span>Chat</span>
+                  <span><Trans i18nKey="chat" /></span>
                 </Link>
               </li>
               <li
@@ -206,7 +207,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboard/app/todo">
                   <i className="las la-check-circle"></i>
-                  <span>Todo</span>
+                  <span><Trans i18nKey="todo" /></span>
                 </Link>
               </li>
               <li
@@ -218,7 +219,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/calendar">
                   <i className="las la-calendar"></i>
-                  <span>Calendar</span>
+                  <span><Trans i18nKey="calendar" /></span>
                 </Link>
               </li>
               <li
@@ -230,7 +231,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/birthday">
                   <i className="las la-birthday-cake"></i>
-                  <span>Birthday</span>
+                  <span><Trans i18nKey="birthday" /></span>
                 </Link>
               </li>
               <li
@@ -242,7 +243,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/weather">
                   <i className="ri-snowy-line"></i>
-                  <span>Weather</span>
+                  <span><Trans i18nKey="weather" /></span>
                 </Link>
               </li>
               <li
@@ -252,7 +253,7 @@ const Sidebar = () => {
               >
                 <Link to="/dashboards/app/music">
                   <i className="ri-play-circle-line"></i>
-                  <span>Music</span>
+                  <span><Trans i18nKey="music" /></span>
                 </Link>
               </li>
               <Accordion.Item
@@ -270,7 +271,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="ri-mail-line"></i>
-                  <span>MarketPlace</span>
+                  <span><Trans i18nKey="market" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-market-place">
@@ -316,7 +317,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="lab la-blogger"></i>
-                  <span>Profiles</span>
+                  <span><Trans i18nKey="profiles" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-profiles">
@@ -373,7 +374,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="lab la-blogger"></i>
-                  <span>Blog</span>
+                  <span><Trans i18nKey="blog" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-blog">
@@ -433,7 +434,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="las la-store"></i>
-                  <span>Store</span>
+                  <span><Trans i18nKey="store" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-store">
@@ -502,7 +503,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="ri-mail-line"></i>
-                  <span>Email</span>
+                  <span><Trans i18nKey="email" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-email">
@@ -580,7 +581,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="ri-focus-2-line"></i>
-                  <span>Ui-Elements</span>
+                  <span><Trans i18nKey="ui_element" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-ui">
@@ -1337,7 +1338,7 @@ const Sidebar = () => {
                   onClick={(activeKey) => setActiveMenu(activeKey)}
                 >
                   <i className="ri-pages-line"></i>
-                  <span>Pages</span>
+                  <span><Trans i18nKey="pages" /></span>
                   <i className="ri-arrow-right-s-line iq-arrow-right"></i>
                 </CustomToggle>
                 <Accordion.Collapse eventKey="sidebar-pages">
