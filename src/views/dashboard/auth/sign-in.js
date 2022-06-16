@@ -1,8 +1,11 @@
-import React from "react";
-import { Row, Col, Container, Form, Button, Image } from "react-bootstrap";
+import React, { useState } from "react";
+import { Row, Col, Container, Form, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Trans } from "react-i18next";
+import ButtonWithLoading from "../../../components/ButtonWithLoading";
+import { signInByProvider } from "../../../api";
+import ByProvider from "./by-provider";
 
 //swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,6 +26,8 @@ SwiperCore.use([Navigation, Autoplay]);
 
 const SignIn = () => {
   let history = useHistory();
+  let [isLoading, setIsLoading] = useState(false);
+
   return (
     <>
       <section className="sign-in-page">
@@ -56,9 +61,11 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_1_title" /></h4>
+                      <h4 className="mb-1 text-white">
+                        <Trans i18nKey="signin_banner_1_title" />
+                      </h4>
                       <p>
-                      <Trans i18nKey="signin_banner_1_description" />
+                        <Trans i18nKey="signin_banner_1_description" />
                       </p>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -67,9 +74,11 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_2_title" /></h4>
+                      <h4 className="mb-1 text-white">
+                        <Trans i18nKey="signin_banner_2_title" />
+                      </h4>
                       <p>
-                      <Trans i18nKey="signin_banner_2_description" />
+                        <Trans i18nKey="signin_banner_2_description" />
                       </p>
                     </SwiperSlide>
                     <SwiperSlide>
@@ -78,9 +87,11 @@ const SignIn = () => {
                         className="img-fluid mb-4"
                         alt="logo"
                       />
-                      <h4 className="mb-1 text-white"><Trans i18nKey="signin_banner_3_title" /></h4>
+                      <h4 className="mb-1 text-white">
+                        <Trans i18nKey="signin_banner_3_title" />
+                      </h4>
                       <p>
-                      <Trans i18nKey="signin_banner_3_description" />
+                        <Trans i18nKey="signin_banner_3_description" />
                       </p>
                     </SwiperSlide>
                   </Swiper>
@@ -89,30 +100,38 @@ const SignIn = () => {
             </Col>
             <Col md="6" className="bg-white pt-5 pt-5 pb-lg-0 pb-5">
               <div className="sign-in-from">
-                <h1 className="mb-0"><Trans i18nKey="signin_title" /></h1>
+                <h1 className="mb-0">
+                  <Trans i18nKey="signin_title" />
+                </h1>
                 <p>
-                <Trans i18nKey="signin_description" />.
+                  <Trans i18nKey="signin_description" />.
                 </p>
                 <Form className="mt-4">
                   <Form.Group className="form-group">
-                    <Form.Label><Trans i18nKey="email_address" /></Form.Label>
+                    <Form.Label>
+                      <Trans i18nKey="email_address" />
+                    </Form.Label>
                     <Form.Control
                       type="email"
                       className="mb-0"
                       id="exampleInputEmail1"
                       placeholder="Enter email"
+                      disabled={isLoading}
                     />
                   </Form.Group>
                   <Form.Group className="form-group">
-                    <Form.Label><Trans i18nKey="password" /></Form.Label>
+                    <Form.Label>
+                      <Trans i18nKey="password" />
+                    </Form.Label>
                     <Link to="/auth/recoverpw" className="float-end">
-                    <Trans i18nKey="forgot_password" /> ?
+                      <Trans i18nKey="forgot_password" /> ?
                     </Link>
                     <Form.Control
                       type="password"
                       className="mb-0"
                       id="exampleInputPassword1"
                       placeholder="Password"
+                      disabled={isLoading}
                     />
                   </Form.Group>
                   <div className="d-inline-block w-100">
@@ -122,39 +141,32 @@ const SignIn = () => {
                         className="me-2"
                         id="customCheck11"
                       />
-                      <Form.Check.Label><Trans i18nKey="remember_me" /></Form.Check.Label>{" "}
+                      <Form.Check.Label>
+                        <Trans i18nKey="remember_me" />
+                      </Form.Check.Label>{" "}
                     </Form.Check>
-                    <Button
+                    <ButtonWithLoading
                       variant="primary"
                       type="button"
                       className="float-end"
                       onClick={() => history.push("/")}
+                      isLoading={isLoading}
                     >
                       <Trans i18nKey="signin" />
-                    </Button>
+                    </ButtonWithLoading>
                   </div>
                   <div className="sign-info">
-                    <span className="dark-color d-inline-block line-height-2">
-                    <Trans i18nKey="signup_question" /> ?{" "}
-                      <Link to="/auth/sign-up"><Trans i18nKey="signup" /></Link>
+                    <span className="iq-question dark-color d-inline-block line-height-2">
+                      <Trans i18nKey="signup_question" /> ?{" "}
+                      <Link to="/auth/sign-up">
+                        <Trans i18nKey="signup" />
+                      </Link>
                     </span>
-                    <ul className="iq-social-media">
-                      <li>
-                        <Link to="#">
-                          <i className="ri-facebook-box-line"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="#">
-                          <i className="ri-twitter-line"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="#">
-                          <i className="ri-instagram-line"></i>
-                        </Link>
-                      </li>
-                    </ul>
+                    <ByProvider
+                      isLoading={isLoading}
+                      setIsLoading={setIsLoading}
+                      onSuccess={signInByProvider}
+                    />
                   </div>
                 </Form>
               </div>

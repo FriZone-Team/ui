@@ -1,10 +1,10 @@
 import httpClient from "./client";
 
-const login = async (data) => {
-  return httpClient.post("auth/login", data);
+const signIn = async (data) => {
+  return httpClient.post("auth/signin", data);
 };
 
-export const loginByProvider = async (providerId, uid, stsTokenManager) => {
-  const res = await login({ providerId, uid, stsTokenManager });
+export const signInByProvider = async (providerId, uid, stsTokenManager) => {
+  const res = await signIn({ providerId, uid, stsTokenManager });
   console.log(res);
 };

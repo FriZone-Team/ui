@@ -43,6 +43,11 @@
   border-top: 1px solid $border-color;
   margin-top: 1.875rem;
   padding-top: 1.25rem;
+
+  .iq-question {
+    margin-top: .75rem;
+    font-size: .95rem;
+  }
 }
 .iq-social-media {
   margin: 0;
@@ -56,11 +61,11 @@
       margin-right: 0;
     }
     a {
-      height: 1.875rem;
-      width: 1.875rem;
+      height: 2.5rem;
+      width: 2.5rem;
       text-align: center;
-      font-size: 1.125rem;
-      line-height: 1.875rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
       display: inline-block;
       background: rgba($primary, 0.2);
       color: $primary !important;
