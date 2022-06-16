@@ -45,7 +45,7 @@ const RouterMiddleware = ({ user, children }) => {
   const { pathname } = useLocation();
   return <>
     {getComponents(user, pathname)}
-    {children}
+    <>{children}</>
   </>;
 };
 

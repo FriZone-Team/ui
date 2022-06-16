@@ -6,13 +6,10 @@ const RedirectTo = ({ value }) => {
 };
 
 export const getActions = (action) => {
-  const getAction = (action, params, key) => {
-    if (typeof params !== "string") {
-      return getAction(action, { value: params });
-    }
+  const getAction = (action, params) => {
     switch (action) {
       case "redirectTo":
-        return <RedirectTo key={key} {...params} />;
+        return <RedirectTo {...params} />;
       default:
         return false;
     }
@@ -20,8 +17,11 @@ export const getActions = (action) => {
 
   const components = [];
   for (const key of keys(action)) {
-    for (const item in castArray(get(action, key))) {
-      const component = getAction(key, item, components.length);
+    for (const item of castArray(get(action, key))) {
+      const component = getAction(key, {
+        ...(typeof item === "object" ? item : { value: item }),
+        key: `${key}-${components.length}`,
+      });
       if (component) {
         components.push(component);
       }
