@@ -105,7 +105,7 @@ const SignIn = () => {
                   </Form.Group>
                   <Form.Group className="form-group">
                     <Form.Label><Trans i18nKey="password" /></Form.Label>
-                    <Link to="#" className="float-end">
+                    <Link to="/auth/recoverpw" className="float-end">
                     <Trans i18nKey="forgot_password" /> ?
                     </Link>
                     <Form.Control
