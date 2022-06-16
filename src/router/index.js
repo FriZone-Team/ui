@@ -28,7 +28,7 @@ const IndexRouters = () => {
           <Route path="/errors" component={Simple}></Route>
           <Route path="/extra-pages" component={Simple}></Route>
           <Route path="/dashboards" component={Layout1}></Route>
-          <Route path="/" component={Default}></Route>
+          <Route path="/" component={Default} exact></Route>
         </RouterMiddleware>
       </Switch>
     </>
