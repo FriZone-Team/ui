@@ -6,7 +6,7 @@ import { getActions } from "./action";
 
 const rules = [
   {
-    path: /^\/auth\/(sign-in|sign-up)/,
+    path: /^\/auth\/(.*?)/,
     condition: {
       isGuest: true,
     },
