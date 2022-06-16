@@ -16,18 +16,18 @@ export const year = new Date().getUTCFullYear();
 const setupFirebase = () => {
   const app = firebaseApp.initializeApp({
     apiKey:
-      process.env.FIREBASE_API_KEY ?? "AIzaSyBU5luOzk4BJUodpGEGGkJDpQSwyl8Jn5Y",
+      process.env.REACT_APP_FIREBASE_API_KEY ?? "AIzaSyBU5luOzk4BJUodpGEGGkJDpQSwyl8Jn5Y",
     authDomain:
-      process.env.FIREBASE_AUTH_DOMAIN ?? "frizone-dev.firebaseapp.com",
-    projectId: process.env.FIREBASE_PROJECT_ID ?? "frizone-dev",
+      process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ?? "frizone-dev.firebaseapp.com",
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ?? "frizone-dev",
     storageBucket:
-      process.env.FIREBASE_STORAGE_BUCKET ?? "frizone-dev.appspot.com",
+      process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ?? "frizone-dev.appspot.com",
     messagingSenderId:
-      process.env.FIREBASE_MESSAGING_SENDER_ID ?? "726231295908",
+      process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID ?? "726231295908",
     appId:
-      process.env.FIREBASE_APP_ID ??
+      process.env.FREACT_IREBASE_APP_ID ??
       "1:726231295908:web:2ca6cc74b30c2486698331",
-    measurementId: process.env.FIREBASE_MEASUREMENT_ID ?? "G-KCKS6Q2JS8",
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID ?? "G-KCKS6Q2JS8",
   });
 
   const providers = {
